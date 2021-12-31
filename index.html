@@ -14,18 +14,37 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form Method="GET" action="results.html">           
             <!-- TODO: Set Action and Method Properties -->
-            <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+            
+                <label for="firstname">Your First Name
+                <span class="required-field">*</span></label>
+                <input type="text" id="firstname" name="firstname" required 
+                minlength="2"
+                maxlength="35"
+                />
+                <!--<input type="text" required /> -->
+                <label for="lastname">Your Last Name
+                <span class="required-field">*</span></label>
+                <input type="text" id="lastname" name="lastname" required 
+                minlength="2"
+                maxlength="35"
+                />
+                
+                <label for="age">Your Age, You must be age 21 or older to enter the contest</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+               
+
+            <label for="password">Your Secret Code (must be 6 alphanumeric characters).<span class="required-field">*</span></label>
+            <input type="password" id="password" name="password" required
+            pattern="[0-9a-zA-Z]{6}" title="6 alphanumeric characters Required">
+            
 
                 <!-- TODO: Create a "lastname" input with type "text" -->
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
             <label for="email">Your Email</label>
-            <input type="text" id="email" name="email">
+            <span class="required-field">*</span>
+            <input type="email" id="email" name="email" required>
             <label for="streetaddress">Your Street Address</label>
             <input type="text" id="streetaddress" name="streetaddress">
             <label for="city">Your City</label>
@@ -83,9 +102,10 @@
                     <option value="WY">Wyoming</option>
                 </select>
             <!--<input type="text" id="state" name="state">-->
-            <input type="text" id="zipcode" name="zipcode">
             <label for="zipcode">Your Zip Code</label>
-
+            <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" title="5-Digit US ZIP Code">
+            
+   
         </fieldset>
 
         <fieldset>
